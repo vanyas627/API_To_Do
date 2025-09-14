@@ -34,7 +34,7 @@ Created as a portfolio project by **Ivan Sotsenko**.
 ```bash
 # clone the repository
 git clone https://github.com/vanyas627/api_to_do.git
-cd api_to_do
+cd API_PORTFOLIO
 
 # create and activate virtual environment
 python -m venv venv
@@ -52,10 +52,13 @@ python manage.py createsuperuser
 
 # run server
 python manage.py runserver
+```
 
-Authentication (JWT)
+---
 
-Get access & refresh tokens
+## Authentication (JWT)
+
+- **Get access & refresh tokens**
 
 POST /api/token/
 
@@ -65,7 +68,7 @@ POST /api/token/
 }
 
 
-Refresh access token
+- **Refresh access token** 
 
 POST /api/token/refresh/
 
@@ -74,29 +77,33 @@ POST /api/token/refresh/
 }
 
 
-Use the access token with:
+- **Use the access token with:**
 
 Authorization: Bearer <access_token>
 
-Main Endpoints
-Method	Endpoint	Description
-POST	/api/register/	Register new user
-POST	/api/login/	Login user (session)
-GET	/api/tasks/	List tasks (with filters + pagination)
-POST	/api/tasks/	Create task
-GET	  /api/tasks/<id>/ Retrieve task
-PUT/PATCH /api/tasks/<id>/ Update task
-DELETE	  /api/tasks/<id>/ Delete task
+## Main Endpoints
+| Method      | Endpoint       | Description                          |
+|------------|----------------|--------------------------------------|
+| POST       | /api/register/ | Register new user                     |
+| POST       | /api/login/    | Login user (session)                  |
+| GET        | /api/tasks/    | List tasks (with filters + pagination) |
+| POST       | /api/tasks/    | Create task                           |
+| GET        | /api/tasks/id/ | Retrieve task                         |
+| PUT/PATCH  | /api/tasks/id/ | Update task                           |
+| DELETE     | /api/tasks/id/ | Delete task                           |
 
-Filtering / Ordering / Pagination
+
+
+## Filtering / Ordering / Pagination
 
 Examples:
 
-/api/tasks/?completed=true
-/api/tasks/?ordering=-created_at
+/api/tasks/?completed=true  
+/api/tasks/?ordering=-created_at  
 /api/tasks/?page=1
 
-API documentation
+
+## API documentation
 
 Swagger UI: http://127.0.0.1:8000/swagger/
 
